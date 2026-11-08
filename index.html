@@ -183,7 +183,7 @@
             </div>
         </section>
 
-        <!-- Lokasi Acara (Akad Nikah & Ngunduh Mantu) -->
+        <!-- Lokasi Acara (Akad Nikah, Ngunduh Mantu, & Boyong) -->
         <section class="py-12 px-6 text-center">
             <h2 class="text-2xl font-serif-lux tracking-widest text-[#1b4332] mb-1 font-bold">LOKASI ACARA</h2>
             <p class="text-xs text-[#2d6a4f] uppercase tracking-widest font-serif-lux mb-8 font-semibold">Tempat & Lokasi Acara</p>
@@ -208,6 +208,22 @@
                 <!-- Card 2: Ngunduh Mantu -->
                 <div class="glass-card p-6 rounded-2xl border border-[#2d6a4f]/25 shadow-lg text-center">
                     <h3 class="text-lg font-serif-lux text-[#2d6a4f] tracking-widest mb-2 font-bold">NGUNDUH MANTU</h3>
+                    <div class="w-16 h-0.5 bg-[#2d6a4f] mx-auto mb-3 opacity-60"></div>
+                    <p class="text-xl font-bold font-serif-lux text-[#1b4332] mb-1">27 NOVEMBER 2026</p>
+                    <p class="text-xs text-[#2d6a4f] uppercase tracking-wider mb-4 font-serif-lux font-semibold">JUM'AT · 13.00 WIB – SELESAI</p>
+                    
+                    <a href="https://www.google.com/maps/search/?api=1&query=Dsn.+Gundo+RT+02+RW+01+Progowati+Mungkid+Magelang" target="_blank" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#2d6a4f] hover:bg-[#1b4332] text-white text-xs tracking-widest font-serif-lux uppercase rounded-full shadow transition-all mb-4 font-medium">
+                        <span>📍 LIHAT LOKASI</span>
+                    </a>
+                    
+                    <p class="text-xs text-gray-700 leading-relaxed font-medium">
+                        Dsn. Gundo Rt. 02 / Rw. 01, Progowati, Mungkid, Magelang
+                    </p>
+                </div>
+
+                <!-- Card 3: Boyong -->
+                <div class="glass-card p-6 rounded-2xl border border-[#2d6a4f]/25 shadow-lg text-center">
+                    <h3 class="text-lg font-serif-lux text-[#2d6a4f] tracking-widest mb-2 font-bold">BOYONG</h3>
                     <div class="w-16 h-0.5 bg-[#2d6a4f] mx-auto mb-3 opacity-60"></div>
                     <p class="text-xl font-bold font-serif-lux text-[#1b4332] mb-1">27 NOVEMBER 2026</p>
                     <p class="text-xs text-[#2d6a4f] uppercase tracking-wider mb-4 font-serif-lux font-semibold">JUM'AT · 13.00 WIB – SELESAI</p>
@@ -402,7 +418,7 @@
         });
 
         // 4. Hitung Mundur Waktu Pernikahan (Target: 27 November 2026)
-        const weddingDate = new Date("2026-112-20T06:00:00+07:00").getTime();
+        const weddingDate = new Date("2026-11-27T06:00:00+07:00").getTime();
 
         setInterval(() => {
             const now = new Date().getTime();
