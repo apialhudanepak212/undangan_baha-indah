@@ -81,14 +81,12 @@
         }
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
-            
             border: 1px solid rgba(45, 106, 79, 0.2);
             box-shadow: 0 10px 30px rgba(45, 106, 79, 0.08);
         }
         /* Style Kotak Hijau Elegan untuk variasi */
         .green-accent-card {
             background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
-            
             border: 1px solid rgba(82, 183, 136, 0.4);
             box-shadow: 0 10px 30px rgba(27, 67, 50, 0.2);
             color: #ffffff;
@@ -248,16 +246,58 @@
             <h2 class="text-xl font-serif-lux text-[#1b4332] uppercase tracking-wider font-bold">Wassalamu’alaikum warahmatullahi wabarakatuh</h2>
         </section>
 
-        <!-- Details & Notes -->
+        <!-- Wedding Gift Section -->
         <section class="py-12 px-6 text-center">
-            <h2 class="text-2xl font-serif-lux tracking-widest text-[#1b4332] mb-1 font-bold">CATATAN</h2>
-            <p class="text-xs text-[#2d6a4f] uppercase tracking-widest font-serif-lux mb-6 font-semibold">Catatan & Ketentuan</p>
+            <h2 class="text-2xl font-serif-lux tracking-widest text-[#1b4332] mb-1 font-bold">WEDDING GIFT</h2>
+            <p class="text-xs text-[#2d6a4f] uppercase tracking-widest font-serif-lux mb-6 font-semibold">Kado & Tanda Kasih</p>
             
-            <div class="glass-card p-6 rounded-xl text-xs text-gray-700 space-y-4 text-left border border-[#2d6a4f]/20 font-medium">
-                <p><strong>Mengenai Hadiah / Kado:</strong> Kehadiran dan doa restu Anda merupakan hadiah terindah bagi kami. Informasi mengenai hadiah dapat menghubungi keluarga mempelai.</p>
-                <p><strong>Bunga:</strong> Doa dan restu tulus dari Bapak/Ibu/Saudara/i akan menjadi kebahagiaan bagi keluarga kami.</p>
+            <div class="glass-card p-6 rounded-2xl text-xs text-gray-700 space-y-4 text-center border border-[#2d6a4f]/20 font-medium shadow-md">
+                <p class="font-playfair italic text-sm text-[#1b4332] leading-relaxed">
+                    "Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi gift."
+                </p>
+                <button id="open-gift-modal" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2d6a4f] hover:bg-[#1b4332] text-white text-xs tracking-widest font-serif-lux uppercase rounded-full shadow-lg transition-all font-bold mt-2">
+                    <span>🎁 Klik Disini</span>
+                </button>
             </div>
         </section>
+
+        <!-- Modal Popup Wedding Gift -->
+        <div id="gift-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden px-4">
+            <div class="glass-card max-w-sm w-full p-6 rounded-2xl relative shadow-2xl border border-[#2d6a4f]/30 bg-white/95">
+                <button id="close-gift-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-lg font-bold">✕</button>
+                
+                <h3 class="text-lg font-serif-lux text-[#1b4332] mb-2 font-bold text-center">Wedding Gift</h3>
+                <p class="text-xs text-[#2d6a4f] text-center mb-6 font-semibold">Kirimkan Tanda Kasih Anda</p>
+
+                <div class="space-y-4">
+                    <!-- Kartu ATM 1: BCA -->
+                    <div class="p-4 rounded-xl green-accent-card text-left relative overflow-hidden shadow-md">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-serif-lux font-bold tracking-wider text-sm">BCA</span>
+                            <span class="text-[10px] bg-white/20 px-2 py-0.5 rounded">Rekening</span>
+                        </div>
+                        <p id="bca-num" class="text-base font-mono font-bold tracking-wider mb-1">1221924865</p>
+                        <p class="text-xs text-[#d8f3dc] mb-3">a.n. BAHA</p>
+                        <button onclick="copyToClipboard('1221924865', this)" class="w-full py-1.5 bg-white/20 hover:bg-white/30 text-white text-xs font-semibold rounded-lg transition-all text-center">
+                            📋 Salin Nomor Rekening
+                        </button>
+                    </div>
+
+                    <!-- Kartu ATM 2: Mandiri -->
+                    <div class="p-4 rounded-xl green-accent-card text-left relative overflow-hidden shadow-md">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-serif-lux font-bold tracking-wider text-sm">MANDIRI</span>
+                            <span class="text-[10px] bg-white/20 px-2 py-0.5 rounded">Rekening</span>
+                        </div>
+                        <p id="mandiri-num" class="text-base font-mono font-bold tracking-wider mb-1">1850005015414</p>
+                        <p class="text-xs text-[#d8f3dc] mb-3">a.n. Kurnia indah safitri</p>
+                        <button onclick="copyToClipboard('1850005015414', this)" class="w-full py-1.5 bg-white/20 hover:bg-white/30 text-white text-xs font-semibold rounded-lg transition-all text-center">
+                            📋 Salin Nomor Rekening
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Countdown / Hitung Mundur (Aksen Kotak Hijau) -->
         <section class="py-12 px-6 bg-[#dcf0e5]/70 text-center border-y border-[#2d6a4f]/20">
@@ -417,8 +457,8 @@
             }
         });
 
-        // 4. Hitung Mundur Waktu Pernikahan (Target: 27 November 2026)
-        const weddingDate = new Date("2026-11-27T06:00:00+07:00").getTime();
+        // 4. Hitung Mundur Waktu Pernikahan (Target: 20 Desember 2026)
+        const weddingDate = new Date("2026-12-20T06:00:00+07:00").getTime();
 
         setInterval(() => {
             const now = new Date().getTime();
@@ -432,6 +472,37 @@
             }
         }, 1000);
 
+        // Modal Gift Pop-up & Salin Rekening
+        const openGiftModal = document.getElementById('open-gift-modal');
+        const giftModal = document.getElementById('gift-modal');
+        const closeGiftModal = document.getElementById('close-gift-modal');
+
+        openGiftModal.addEventListener('click', () => {
+            giftModal.classList.remove('hidden');
+        });
+
+        closeGiftModal.addEventListener('click', () => {
+            giftModal.classList.add('hidden');
+        });
+
+        giftModal.addEventListener('click', (e) => {
+            if (e.target === giftModal) {
+                giftModal.classList.add('hidden');
+            }
+        });
+
+        function copyToClipboard(text, btnElement) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btnElement.innerText;
+                btnElement.innerText = "✅ Berhasil Disalin!";
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Gagal menyalin text: ', err);
+            });
+        }
+
         // 5. Interaksi Form RSVP & Daftar Ucapan
         const rsvpForm = document.getElementById('rsvp-form');
         const wishesContainer = document.getElementById('wishes-container');
@@ -441,7 +512,7 @@
         function renderWishes() {
             let html = '';
             const allWishes = [
-                { name: "Elena & Family", status: "Hadir", message: "Selamat berbahagia Arif & Lubna! Semoga menjadi keluarga yang harmonis selamanya. 🌿", time: "Baru saja" },
+                { name: "Elena & Family", status: "Hadir", message: "Selamat berbahagia Baha' & Indah! Semoga menjadi keluarga yang harmonis selamanya. 🌿", time: "Baru saja" },
                 ...savedWishes
             ];
 
