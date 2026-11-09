@@ -72,6 +72,26 @@
         .gold-border {
             border: 1px solid rgba(184, 134, 11, 0.4);
         }
+
+        /* Animasi timbul saat elemen masuk ke area pandang */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translate3d(0, 38px, 0) scale(0.97);
+            transition: opacity 700ms ease,
+                        transform 800ms cubic-bezier(0.2, 0.75, 0.25, 1);
+            will-change: opacity, transform;
+        }
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
     </style>
 </head>
 <body class="bg-[#eaf3ec] text-gray-800 min-h-screen relative selection:bg-[#2d6a4f] selection:text-white">
@@ -367,6 +387,47 @@
     <script>
 
 
+
+        // Animasi timbul untuk bagian undangan ketika masuk ke viewport
+        let revealObserver;
+
+        function initScrollReveal() {
+            const revealTargets = document.querySelectorAll(
+                '#main-content > header, ' +
+                '#main-content > section, ' +
+                '#main-content > footer, ' +
+                '#main-content .glass-card, ' +
+                '#main-content .green-accent-card, ' +
+                '#main-content #countdown > div, ' +
+                '#main-content #wishes-container > div'
+            );
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                revealTargets.forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            if (revealObserver) revealObserver.disconnect();
+
+            revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -35px 0px'
+            });
+
+            revealTargets.forEach((el, index) => {
+                el.classList.add('scroll-reveal');
+                el.style.transitionDelay = `${(index % 4) * 90}ms`;
+                revealObserver.observe(el);
+            });
+        }
+
         // 2. Ambil Nama Tamu dari URL Parameter (?to=NamaTamu)
         const urlParams = new URLSearchParams(window.location.search);
         const guestParam = urlParams.get('to');
@@ -387,6 +448,7 @@
             setTimeout(() => {
                 coverSection.style.display = 'none';
                 mainContent.classList.remove('hidden');
+                initScrollReveal();
                 window.scrollTo(0, 0);
             }, 600);
 
