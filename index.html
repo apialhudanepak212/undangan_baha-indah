@@ -56,29 +56,7 @@
             background: #2d6a4f;
             border-radius: 4px;
         }
-        /* Animasi Daun / Kelopak Jatuh */
-        .falling-rose {
-            position: fixed;
-            top: -10vh;
-            user-select: none;
-            pointer-events: none;
-            z-index: 50;
-            animation: fall linear infinite;
-        }
-        @keyframes fall {
-            0% {
-                transform: translateY(-10vh) rotate(0deg) translateX(0);
-                opacity: 0.9;
-            }
-            50% {
-                transform: translateY(50vh) rotate(180deg) translateX(30px);
-                opacity: 0.7;
-            }
-            100% {
-                transform: translateY(110vh) rotate(360deg) translateX(-20px);
-                opacity: 0;
-            }
-        }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             border: 1px solid rgba(45, 106, 79, 0.2);
@@ -98,9 +76,7 @@
 </head>
 <body class="bg-[#eaf3ec] text-gray-800 min-h-screen relative selection:bg-[#2d6a4f] selection:text-white">
 
-    <div id="flower-container" class="fixed inset-0 pointer-events-none overflow-hidden z-40">
-        <!-- Generasi kelopak/daun lewat script javascript -->
-    </div>
+
 
     <section id="cover" class="fixed inset-0 z-50 flex items-center justify-center bg-[#dcf0e5] bg-cover bg-center transition-all duration-1000 px-4" style="background-image: url('background.jpg'); background-size: cover; background-position: center;">
         <div class="green-accent-card max-w-md w-full p-8 rounded-2xl text-center shadow-2xl relative overflow-hidden">
@@ -389,28 +365,7 @@
     </button>
 
     <script>
-        // 1. Generate Kelopak/Daun Jatuh Berkelanjutan
-        const flowerContainer = document.getElementById('flower-container');
-        const flowerTypes = ['🌿', '🍃', '🌱', '✨'];
 
-        function createFlower() {
-            const flower = document.createElement('div');
-            flower.classList.add('falling-rose');
-            flower.innerText = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
-            flower.style.left = Math.random() * 100 + 'vw';
-            flower.style.fontSize = (Math.random() * 10 + 12) + 'px';
-            
-            const duration = Math.random() * 6 + 5; 
-            flower.style.animationDuration = duration + 's';
-            
-            flowerContainer.appendChild(flower);
-
-            setTimeout(() => {
-                flower.remove();
-            }, duration * 1000);
-        }
-
-        setInterval(createFlower, 450);
 
         // 2. Ambil Nama Tamu dari URL Parameter (?to=NamaTamu)
         const urlParams = new URLSearchParams(window.location.search);
