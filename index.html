@@ -96,8 +96,6 @@
 </head>
 <body class="bg-[#eaf3ec] text-gray-800 min-h-screen relative selection:bg-[#2d6a4f] selection:text-white">
 
-
-
     <section id="cover" class="fixed inset-0 z-50 flex items-center justify-center bg-[#dcf0e5] bg-cover bg-center transition-all duration-1000 px-4" style="background-image: url('background.jpg'); background-size: cover; background-position: center;">
         <div class="green-accent-card max-w-md w-full p-8 rounded-2xl text-center shadow-2xl relative overflow-hidden">
             <!-- Ornamen Dekoratif atas -->
@@ -156,7 +154,7 @@
         <!-- Nama Mempelai -->
         <section class="py-12 px-6 bg-[#dcf0e5]/70 border-y border-[#2d6a4f]/20 text-center relative">
             <div class="max-w-sm mx-auto space-y-6">
-                <!-- Mempelai Pria (Kotak Hijau dengan Background tiga.png) -->
+                <!-- Mempelai Pria -->
                 <div class="green-accent-card p-6 rounded-2xl shadow-lg relative overflow-hidden" style="background-image: linear-gradient(rgba(27, 67, 50, 0.8), rgba(45, 106, 79, 0.85)), url('tiga.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                     <div class="relative z-10">
                         <h2 class="text-2xl font-bold font-serif-lux text-[#d8f3dc] tracking-wider mb-2">ACHMAD BAHA'UDIN </h2>
@@ -167,7 +165,7 @@
                 <!-- Simbol & -->
                 <div class="text-3xl font-serif-lux text-[#2d6a4f] my-2 relative z-10">&</div>
 
-                <!-- Mempelai Wanita (Kotak Hijau dengan Background tiga.png) -->
+                <!-- Mempelai Wanita -->
                 <div class="green-accent-card p-6 rounded-2xl shadow-lg relative overflow-hidden" style="background-image: linear-gradient(rgba(27, 67, 50, 0.8), rgba(45, 106, 79, 0.85)), url('tiga.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                     <div class="relative z-10">
                         <h2 class="text-2xl font-bold font-serif-lux text-[#d8f3dc] tracking-wider mb-2">KURNIA INDAH SAFITRI</h2>
@@ -177,7 +175,7 @@
             </div>
         </section>
 
-        <!-- Lokasi Acara (Akad Nikah, Ngunduh Mantu, & Boyong) -->
+        <!-- Lokasi Acara -->
         <section class="py-12 px-6 text-center">
             <h2 class="text-2xl font-serif-lux tracking-widest text-[#1b4332] mb-1 font-bold">LOKASI ACARA</h2>
             <p class="text-xs text-[#2d6a4f] uppercase tracking-widest font-serif-lux mb-8 font-semibold">Tempat & Lokasi Acara</p>
@@ -199,7 +197,7 @@
                     </p>
                 </div>
 
-                <!-- Card 2: Ngunduh Mantu -->
+                <!-- Card 2: Resepsi -->
                 <div class="glass-card p-6 rounded-2xl border border-[#2d6a4f]/25 shadow-lg text-center">
                     <h3 class="text-lg font-serif-lux text-[#2d6a4f] tracking-widest mb-2 font-bold">RESEPSI</h3>
                     <div class="w-16 h-0.5 bg-[#2d6a4f] mx-auto mb-3 opacity-60"></div>
@@ -242,7 +240,7 @@
             <h2 class="text-xl font-serif-lux text-[#1b4332] uppercase tracking-wider font-bold">Wassalamu’alaikum warahmatullahi wabarakatuh</h2>
         </section>
 
-        <!-- Galeri Foto Full Frame (tanpa judul) -->
+        <!-- Galeri Foto Full Frame -->
         <section id="fotofoto" class="w-full p-0 m-0 overflow-hidden">
             <img src="fotofoto.png"
                  alt="Foto kenangan Baha' dan Indah"
@@ -303,7 +301,7 @@
             </div>
         </div>
 
-        <!-- Countdown / Hitung Mundur (Aksen Kotak Hijau) -->
+        <!-- Countdown / Hitung Mundur -->
         <section class="py-12 px-6 bg-[#dcf0e5]/70 text-center border-y border-[#2d6a4f]/20">
             <h2 class="text-xl font-serif-lux tracking-widest text-[#1b4332] mb-2 font-bold">MENUJU HARI BAHAGIA</h2>
             <p class="text-xs text-gray-600 mb-6 font-medium">Akad nikah · 20 Desember 2026, pukul 06.00 WIB</p>
@@ -364,14 +362,7 @@
             <div>
                 <h3 class="text-lg font-serif-lux text-[#1b4332] mb-4 text-center font-bold">Daftar Ucapan Tamu</h3>
                 <div id="wishes-container" class="space-y-3 max-h-72 overflow-y-auto pr-1">
-                    <!-- Contoh Pesan Awal -->
-                    <div class="glass-card p-4 rounded-xl border border-[#2d6a4f]/20 text-xs shadow-sm">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-[#2d6a4f] font-serif-lux">Elena & Family</span>
-                            <span class="text-[10px] text-gray-500">Baru saja</span>
-                        </div>
-                        <p class="text-gray-700 font-medium">Selamat berbahagia Arif & Lubna! Semoga menjadi keluarga yang harmonis selamanya. 🌿</p>
-                    </div>
+                    <p class="text-center text-xs text-gray-500">Memuat ucapan...</p>
                 </div>
             </div>
         </section>
@@ -393,8 +384,8 @@
     </button>
 
     <script>
-
-
+        // URL Google Apps Script yang sudah kamu berikan
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzqLHPHgTYUusGr4WRmMqkvav9sqBXEM0iHMJzDwuW5_GYuvvgCq3Z0-2W9NdJ0PPJF/exec";
 
         // Animasi timbul untuk bagian undangan ketika masuk ke viewport
         let revealObserver;
@@ -436,14 +427,14 @@
             });
         }
 
-        // 2. Ambil Nama Tamu dari URL Parameter (?to=NamaTamu)
+        // Ambil Nama Tamu dari URL Parameter (?to=NamaTamu)
         const urlParams = new URLSearchParams(window.location.search);
         const guestParam = urlParams.get('to');
         if (guestParam) {
             document.getElementById('guest-name').innerText = decodeURIComponent(guestParam);
         }
 
-        // 3. Tombol Buka Undangan & Play Audio
+        // Tombol Buka Undangan & Play Audio
         const openBtn = document.getElementById('open-btn');
         const coverSection = document.getElementById('cover');
         const mainContent = document.getElementById('main-content');
@@ -482,7 +473,7 @@
             }
         });
 
-        // 4. Hitung Mundur Waktu Pernikahan (Target: 20 Desember 2026)
+        // Hitung Mundur Waktu Pernikahan (Target: 20 Desember 2026)
         const weddingDate = new Date("2026-12-20T06:00:00+07:00").getTime();
 
         setInterval(() => {
@@ -528,54 +519,94 @@
             });
         }
 
-        // 5. Interaksi Form RSVP & Daftar Ucapan
+        // Interaksi Form RSVP & Sinkronisasi Daftar Ucapan dengan Google Sheets
         const rsvpForm = document.getElementById('rsvp-form');
         const wishesContainer = document.getElementById('wishes-container');
 
-        let savedWishes = JSON.parse(localStorage.getItem('wedding_wishes_mixed_green')) || [];
-        
-        function renderWishes() {
-            let html = '';
-            const allWishes = [
-                { name: "Elena & Family", status: "Hadir", message: "Selamat berbahagia Baha' & Indah! Semoga menjadi keluarga yang harmonis selamanya. 🌿", time: "Baru saja" },
-                ...savedWishes
-            ];
+        // Fungsi mengambil data ucapan dari Google Sheets
+        async function fetchWishes() {
+            try {
+                const response = await fetch(SCRIPT_URL);
+                const data = await response.json();
+                
+                let html = '';
+                if (!data || data.length === 0) {
+                    html = `<p class="text-center text-xs text-gray-500">Belum ada ucapan.</p>`;
+                } else {
+                    data.forEach(item => {
+                        let timeString = "Baru saja";
+                        if(item.time) {
+                            let d = new Date(item.time);
+                            timeString = isNaN(d) ? item.time : d.toLocaleDateString('id-ID', {day: 'numeric', month: 'short', hour: '2-digit', minute:'2-digit'});
+                        }
 
-            allWishes.forEach(item => {
-                html += `
-                    <div class="glass-card p-4 rounded-xl border border-[#2d6a4f]/20 text-xs shadow-sm">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-[#2d6a4f] font-serif-lux">${escapeHtml(item.name)} <span class="text-[10px] text-gray-500 font-normal">(${escapeHtml(item.status)})</span></span>
-                            <span class="text-[10px] text-gray-500">${item.time}</span>
-                        </div>
-                        <p class="text-gray-700 mt-1 font-medium">${escapeHtml(item.message)}</p>
-                    </div>
-                `;
-            });
-            wishesContainer.innerHTML = html;
+                        html += `
+                            <div class="glass-card p-4 rounded-xl border border-[#2d6a4f]/20 text-xs shadow-sm">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-[#2d6a4f] font-serif-lux">${escapeHtml(item.name)} <span class="text-[10px] text-gray-500 font-normal">(${escapeHtml(item.status)})</span></span>
+                                    <span class="text-[10px] text-gray-500">${timeString}</span>
+                                </div>
+                                <p class="text-gray-700 mt-1 font-medium">${escapeHtml(item.message)}</p>
+                            </div>
+                        `;
+                    });
+                }
+                wishesContainer.innerHTML = html;
+                initScrollReveal();
+            } catch (error) {
+                console.error("Gagal memuat ucapan:", error);
+            }
         }
 
-        rsvpForm.addEventListener('submit', (e) => {
+        // Fungsi Kirim Data RSVP ke Google Sheets
+        rsvpForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            
+            const submitBtn = rsvpForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Mengirim...";
+            submitBtn.disabled = true;
+
             const name = document.getElementById('rsvp-name').value;
             const status = document.getElementById('rsvp-status').value;
             const message = document.getElementById('rsvp-message').value;
 
-            const newWish = { name, status, message, time: "Baru saja" };
-            savedWishes.unshift(newWish);
-            localStorage.setItem('wedding_wishes_mixed_green', JSON.stringify(savedWishes));
+            const payload = { name, status, message };
 
-            renderWishes();
-            rsvpForm.reset();
-            alert("Terima kasih! Konfirmasi kehadiran dan ucapan Anda berhasil dikirim.");
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                alert("Terima kasih! Konfirmasi kehadiran dan ucapan Anda berhasil dikirim.");
+                rsvpForm.reset();
+                
+                // Segarkan daftar ucapan setelah 1.5 detik agar data baru muncul di layar
+                setTimeout(fetchWishes, 1500);
+
+            } catch (error) {
+                console.error("Gagal mengirim:", error);
+                alert("Terjadi kesalahan, silahkan coba lagi.");
+            } finally {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
 
         function escapeHtml(text) {
+            if (!text) return "";
             const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+            return text.toString().replace(/[&<>"']/g, function(m) { return map[m]; });
         }
 
-        renderWishes();
+        // Ambil data pertama kali saat halaman dibuka
+        fetchWishes();
+
+        // Auto-refresh data ucapan setiap 30 detik agar tamu lain bisa melihat ucapan baru secara live
+        setInterval(fetchWishes, 30000);
     </script>
 </body>
 </html>
